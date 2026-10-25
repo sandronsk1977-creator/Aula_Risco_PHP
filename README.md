@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/php2shell-cyber-lab-banner.png" alt="PHP2Shell Cyber Lab 2026 — Laboratório virtual interativo" width="100%">
+<img src="assets/php2shell-cyber-lab-animated.svg" alt="PHP2Shell Cyber Lab 2026 — Laboratório virtual interativo" width="100%">
 
 # 🛡️ *SF CYBER ACADEMY* • PHP2Shell Cyber Lab 2026
 
