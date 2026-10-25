@@ -21,13 +21,11 @@ class PHP2ShellLab {
     // Botão iniciar treinamento
     const startBtn = document.getElementById('start-training');
     if (startBtn) {
-      startBtn.onclick = () => {
-        this.goToMission(1);
-      };
       startBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         this.goToMission(1);
-      });
+      }, true);
     }
 
     // Botão reiniciar progresso
@@ -496,6 +494,14 @@ class PHP2ShellLab {
 }
 
 // Inicializar aplicação quando DOM estiver pronto
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new PHP2ShellLab();
-});
+function initApp() {
+  if (!window.app) {
+    window.app = new PHP2ShellLab();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
