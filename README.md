@@ -2,7 +2,7 @@
 
 <img src="assets/php2shell-cyber-lab-banner.png" alt="PHP2Shell Cyber Lab 2026 — Laboratório virtual interativo" width="100%">
 
-# 🛡️ PHP2Shell Cyber Lab 2026
+# 🛡️ *SF CYBER ACADEMY* • PHP2Shell Cyber Lab 2026
 
 ### Laboratório virtual interativo de cibersegurança
 
@@ -115,8 +115,8 @@ A licença ainda precisa ser definida pelo responsável pelo repositório. Antes
 
 <div align="center">
 
-**PHP2Shell Cyber Lab 2026**
+**SF CYBER ACADEMY • PHP2Shell Cyber Lab 2026**
 
-*Aprender segurança na prática — com responsabilidade.*
+*Aprender segurança na prática e com responsabilidade.*
 
 </div>
