@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/php2shell-cyber-lab-animated.svg" alt="PHP2Shell Cyber Lab 2026 — Laboratório virtual interativo" width="100%">
+<img src="assets/php2shell-cyber-lab-animated.svg" alt="PHP2Shell Cyber Lab 2026 — laboratório virtual interativo" width="100%">
 
-# 🛡️ *SF CYBER ACADEMY* • PHP2Shell Cyber Lab 2026
+# 🛡️ SF Cyber Academy • PHP2Shell Cyber Lab 2026
 
-### Laboratório virtual interativo de cibersegurança
+### Laboratório virtual de vulnerabilidades PHP 2026
 
 **Investigue. Aprenda. Corrija. Valide.**
 
@@ -12,8 +12,8 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Modo-Local-0A7E8C?style=for-the-badge" alt="Execução local">
-  <img src="https://img.shields.io/badge/Foco-Educacional-6C43B5?style=for-the-badge" alt="Foco educacional">
+  <img src="https://img.shields.io/badge/Arquivo%20único-0A7E8C?style=for-the-badge" alt="Arquivo único">
+  <img src="https://img.shields.io/badge/Modo-Local-6C43B5?style=for-the-badge" alt="Execução local">
 </p>
 
 </div>
@@ -22,100 +22,130 @@
 
 ## 📌 Sobre o projeto
 
-O **PHP2Shell Cyber Lab 2026** é um laboratório educacional criado para ensinar conceitos de segurança de aplicações web por meio de missões guiadas, evidências simuladas e exercícios de mitigação.
+O **PHP2Shell Cyber Lab 2026** é um laboratório educacional em **um único `index.html`** (HTML + CSS + JavaScript puro, sem framework e sem build). O aluno assume o papel de analista de segurança de uma empresa fictícia cujo servidor roda **PHP 8.2.11 com mod_php**, sessões ativas e um worker reaproveitado entre requisições.
 
-A proposta é oferecer uma experiência prática e visual diretamente no navegador, sem exigir backend, Docker ou conexão com serviços externos para o funcionamento básico planejado.
+A trilha cobre três vulnerabilidades de 2026:
 
-> **Importante:** o laboratório é educativo. Os cenários simulados não executam ataques reais nem comprovam a existência de vulnerabilidades em sistemas de produção.
+| CVE | Tema | Gravidade |
+|:---|:---|:---|
+| **CVE-2026-109618** | RCE via corrupção no tratamento de falta de memória (OOM) | Crítica (CVSS 9.2) |
+| **CVE-2026-109619** | RCE / use-after-free no estado global do worker | Crítica (CVSS 9.2) |
+| **CVE-2026-115560** | `session.upload_progress` + serialize handler em runtime | Parcialmente validada |
 
-## 🎯 Objetivos de aprendizagem
+> **Importante:** o laboratório é educativo. Os cenários, terminais e resultados são simulados e não executam ataques reais. Os dados das CVEs seguem o material didático do projeto e devem ser confirmados em fontes oficiais antes de qualquer uso em relatório.
 
-- Compreender o contexto técnico de vulnerabilidades em aplicações web.
-- Interpretar evidências e identificar configurações potencialmente arriscadas.
-- Exercitar o raciocínio de investigação e resposta a incidentes.
-- Aplicar correções conceituais em cenários simulados.
-- Comparar o cenário antes e depois da mitigação.
-- Consolidar o aprendizado por meio de relatórios e, caso implementado, certificado de conclusão.
+## 🚀 Como usar
 
-## 🧪 Experiência do laboratório
+**Aluno**
 
-| Área | O que o participante pratica |
-|---|---|
-| 🧭 Missões | Seguir etapas de aprendizagem com objetivos claros. |
-| 🔎 Investigação | Analisar evidências fictícias e identificar possíveis riscos. |
-| 💻 Terminal | Aprender conceitos por meio de comandos e saídas demonstrativas, sem executar comandos reais no sistema. |
-| 🛠️ Mitigação | Escolher medidas de correção dentro do cenário educacional. |
-| 📊 Progresso | Acompanhar as etapas concluídas, se esse recurso estiver disponível na versão atual. |
-| 🏆 Conclusão | Consultar um resumo de aprendizagem e certificado, se implementados. |
+1. Abra o **`index.html`** no navegador (Chrome, Edge ou Firefox) ou acesse **<https://php2shell2026.projetosdisruptivos.com.br>**. Não precisa instalar nada nem subir servidor.
+2. Leia a **Aula** no cabeçalho e o card **Objetivo e ambiente**.
+3. Digite seu nome no campo do cabeçalho — ele aparece no certificado e no laudo.
+4. Siga as **6 missões**, use o **terminal simulado** e o **painel do ambiente**.
+5. Ao terminar, gere o **laudo `.md`** e o **certificado** (imprimir ou salvar em PDF).
+6. O progresso é salvo automaticamente no navegador (`localStorage`).
+
+**Professor**
+
+- Use o laboratório como atividade guiada: as missões 2, 3 e 4 são a triagem das três CVEs; a missão 5 é o hardening e a 6 é a validação final.
+- O botão **Meus erros** mostra as categorias em que a turma mais erra.
+- O **laudo `.md`** pode ser recolhido como entrega.
+
+## 🗺️ Trilha de aprendizagem
+
+| Etapa | Tema | Missões |
+|:---:|:---|:---|
+| 1 | Fundamentos e reconhecimento | 1 |
+| 2 | CVEs de memória | 2 e 3 |
+| 3 | Sessão e mitigação | 4 e 5 |
+| 4 | Validação e entrega | 6 |
+
+Cada etapa tem uma **checagem de compreensão com 3 perguntas que não contam nota**. Se errar, a explicação aparece na hora e há um atalho para a seção correspondente da Aula.
+
+## 🎯 Missões e pontuação
+
+| # | Missão | O que é validado | Pontos |
+|:---:|:---|:---|:---:|
+| 1 | Reconhecimento | versão do PHP e diferença entre CLI e mod_php | 10 |
+| 2 | CVE-2026-109618 | gravidade, tipo de falha e versões corrigidas | 15 |
+| 3 | CVE-2026-109619 | causa raiz (use-after-free) e reutilização do worker | 15 |
+| 4 | CVE-2026-115560 | mitigações corretas e status honesto da validação | 15 |
+| 5 | Aplicação das correções | PHP 8.2.35, php-fpm, upload_progress Off, handler `php` | 20 |
+| 6 | Validação final | classificação de 3 cenários como corrigido/pendente | 25 |
+
+**Total: 100 pontos.** A nota é recalculada a cada mudança: se você desfizer uma configuração correta, a missão volta a pendente. Cada missão tem **três níveis de dica** (conceito → comandos → resposta comentada).
+
+## 💻 Terminal simulado
+
+O terminal é didático: **nada é executado no computador**. Ele reflete o estado do painel do ambiente.
+
+```text
+php -v
+php -i
+php -m
+php -r "echo PHP_VERSION;"
+apache2ctl -M
+grep session.upload_progress /etc/php/8.2/apache2/php.ini
+grep session.serialize_handler /etc/php/8.2/apache2/php.ini
+uname -a
+whoami
+clear
+help
+```
+
+## 🛠️ Painel do ambiente (hardening)
+
+Quatro ajustes compõem a missão 5:
+
+| Item | Estado vulnerável | Estado endurecido |
+|:---|:---|:---|
+| Versão do PHP | 8.2.11 | **8.2.35** |
+| SAPI | mod_php | **php-fpm** |
+| `session.upload_progress` | On | **Off** |
+| `session.serialize_handler` | php_serialize | **php** |
+
+## 🧪 Recursos de aprendizagem
+
+- **Modo prática:** a nota não é contabilizada e as dicas ficam liberadas.
+- **Meus erros:** classifica os erros repetidos por tema (reconhecimento, triagem, causa, mitigação, hardening, validação).
+- **Competências:** seis indicadores independentes da nota (reconhecimento, triagem, memória/RCE, sessão, hardening, validação).
+- **Certificado:** nome do aluno, data, nota, missões e competências. Educacional, sem acreditação externa.
+- **Laudo `.md`:** exporta nome, data, nota, status das missões, ambiente final, competências e erros.
+- **Tema claro/escuro:** alterna no cabeçalho e fica salvo.
 
 ## 🧰 Tecnologias
 
-<div align="center">
-
 | Tecnologia | Utilização |
-|---|---|
-| **HTML5** | Estrutura das páginas e dos componentes da interface. |
-| **CSS3** | Layout responsivo, identidade visual e efeitos da interface. |
-| **JavaScript** | Interações, lógica das missões e simulações locais. |
+|:---|:---|
+| **HTML5** | Estrutura e conteúdo do laboratório. |
+| **CSS3** | Layout responsivo, tema claro/escuro e impressão do certificado. |
+| **JavaScript** | Missões, validação, terminal simulado, trilha, quiz e persistência local. |
 
-</div>
-
-## 👨🏻‍💻 Como executar
-
-1. **Clone ou baixe** este repositório.
-2. Abra a pasta do projeto no computador.
-3. Localize o arquivo `index.html`.
-4. Abra-o em um navegador moderno, como Firefox, Chrome ou Edge.
-5. Siga as instruções exibidas no laboratório.
-
-A experiência foi planejada para funcionar localmente. Se a versão atual tiver requisitos adicionais, consulte as instruções e os arquivos presentes no repositório.
+Sem backend, sem dependências externas e sem build. Os únicos recursos externos são os links de referência (CVE.org e NVD).
 
 ## 🔐 Segurança e uso responsável
 
-- Utilize o laboratório apenas para fins educacionais e defensivos.
-- Não insira senhas, tokens, chaves de API ou informações confidenciais.
+- Utilize apenas para fins educacionais e defensivos.
+- Não insira senhas, tokens ou dados confidenciais: o progresso fica no seu navegador.
 - Não teste sistemas de terceiros sem autorização explícita.
-- Considere os terminais, evidências e resultados simulados como material didático — não como execução real.
-- Valide qualquer conclusão sobre um sistema real com testes autorizados, documentação técnica e fontes confiáveis.
-- Confirme a autenticidade, a descrição, as versões afetadas e o status de CVEs em fontes oficiais antes de usá-las em análises ou relatórios.
+- Trate terminais, evidências e resultados como material didático simulado.
+- Confirme identificador, versões afetadas e status das CVEs em fontes oficiais.
 
-### Referências para validação de vulnerabilidades
+### Referências
 
 - [CVE Program](https://www.cve.org/)
 - [National Vulnerability Database (NVD)](https://nvd.nist.gov/)
-
-A menção a um identificador CVE neste projeto não confirma, por si só, sua autenticidade ou aplicabilidade a uma versão específica de software. Consulte também os avisos oficiais do fornecedor.
-
-## 👥 Público-alvo
-
-- Estudantes e profissionais iniciantes em cibersegurança.
-- Administradores de sistemas e redes.
-- Desenvolvedores interessados em desenvolvimento seguro.
-- Instrutores que desejam demonstrar conceitos em um ambiente controlado.
-
-## 🗺️ Estado do projeto
-
-Projeto educacional em desenvolvimento. A disponibilidade de recursos como progresso persistente, relatórios e certificado depende da implementação presente na versão publicada. Consulte a aplicação para verificar o que está funcional.
-
-## 🤝 Contribuições
-
-Sugestões e melhorias são bem-vindas. Ao contribuir:
-
-1. Explique o objetivo da mudança.
-2. Mantenha o foco educativo, preventivo e defensivo.
-3. Não inclua rotinas de exploração contra sistemas reais.
-4. Evite coletar ou armazenar dados sensíveis.
-5. Valide as referências técnicas antes de publicar informações sobre vulnerabilidades.
+- [PHP Security Advisories](https://www.php.net/security/)
 
 ## 📄 Licença
 
-A licença ainda precisa ser definida pelo responsável pelo repositório. Antes de reutilizar, modificar ou redistribuir o projeto, confira se existe um arquivo `LICENSE` e quais condições se aplicam.
+A licença ainda precisa ser definida pelo responsável pelo repositório. Antes de reutilizar, modificar ou redistribuir, confira se existe um arquivo `LICENSE` e quais condições se aplicam.
 
 ---
 
 <div align="center">
 
-**SF CYBER ACADEMY • PHP2Shell Cyber Lab 2026**
+**SF Cyber Academy • PHP2Shell Cyber Lab 2026**
 
 *Aprender segurança na prática e com responsabilidade.*
 
