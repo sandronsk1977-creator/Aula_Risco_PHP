@@ -21,14 +21,16 @@ class PHP2ShellLab {
     // Botão iniciar treinamento
     const startBtn = document.getElementById('start-training');
     if (startBtn) {
-      const handler = (e) => {
+      startBtn.onclick = null;
+      startBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopImmediatePropagation();
-        this.goToMission(1);
-      };
-      startBtn.removeEventListener('click', handler, true);
-      startBtn.addEventListener('click', handler, true);
-      startBtn.addEventListener('click', handler, false);
+        e.stopPropagation();
+        if (window.app) {
+          window.app.goToMission(1);
+        } else {
+          this.goToMission(1);
+        }
+      }, { capture: true, once: false });
     }
 
     // Botão reiniciar progresso
