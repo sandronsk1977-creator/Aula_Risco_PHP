@@ -22,7 +22,7 @@
 
 ## 📌 Sobre o projeto
 
-O **PHP2Shell Cyber Lab 2026** é um laboratório educacional concebido para ensinar conceitos de segurança de aplicações web por meio de missões guiadas, evidências simuladas e exercícios de mitigação.
+O **PHP2Shell Cyber Lab 2026** é um laboratório educacional criado para ensinar conceitos de segurança de aplicações web por meio de missões guiadas, evidências simuladas e exercícios de mitigação.
 
 A proposta é oferecer uma experiência prática e visual diretamente no navegador, sem exigir backend, Docker ou conexão com serviços externos para o funcionamento básico planejado.
 
