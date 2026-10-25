@@ -60,7 +60,7 @@ A proposta é oferecer uma experiência prática e visual diretamente no navegad
 
 </div>
 
-## 🚀 Como executar
+## 👨🏻‍💻 Como executar
 
 1. **Clone ou baixe** este repositório.
 2. Abra a pasta do projeto no computador.
