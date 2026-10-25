@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP2Shell Cyber Lab 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>PHP2Shell Cyber Lab 2026</h1>
+            <p class="header-subtitle">Laboratório virtual de investigação, correção e validação de vulnerabilidades PHP</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>NAVEGAÇÃO</h3>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" data-mission="0">📊 Dashboard</a>
+                <a href="#" class="nav-link" data-mission="1">1. Reconhecimento</a>
+                <a href="#" class="nav-link" data-mission="2">2. CVE-2026-109618</a>
+                <a href="#" class="nav-link" data-mission="3">3. CVE-2026-109619</a>
+                <a href="#" class="nav-link" data-mission="4">4. CVE-2026-115560</a>
+                <a href="#" class="nav-link" data-mission="5">5. Aplicação Correções</a>
+                <a href="#" class="nav-link" data-mission="6">6. Validação Final</a>
+                <a href="#" class="nav-link" data-mission="99">📄 Relatório</a>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+            <!-- Dashboard View -->
+            <section id="dashboard-view" class="dashboard">
+                <h2>Dashboard - Visão Geral</h2>
+                
+                <div class="dashboard-section">
+                    <h3>Objetivos de Aprendizagem</h3>
+                    <ul>
+                        <li>Identificar versões e configurações de risco em ambiente PHP</li>
+                        <li>Compreender vulnerabilidades do PHP (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560)</li>
+                        <li>Analisar evidências simuladas</li>
+                        <li>Escolher medidas corretivas adequadas</li>
+                        <li>Validar correções aplicadas</li>
+                        <li>Produzir relatório de conclusão</li>
+                    </ul>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Progresso Geral</h3>
+                    <div class="progress-bar-container">
+                        <div id="overall-progress" class="progress-bar" style="width: 0%">0%</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-value" id="missions-completed">0</span>
+                        <span class="stat-label">MISSÕES CONCLUÍDAS</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="missions-pending">5</span>
+                        <span class="stat-label">MISSÕES PENDENTES</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="total-score">0</span>
+                        <span class="stat-label">PONTUAÇÃO</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="correct-answers">0</span>
+                        <span class="stat-label">RESPOSTAS CORRETAS</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h3>Estado das Missões</h3>
+                    <div class="missions-status">
+                        <div class="mission-status-item">
+                            <span>1. Reconhecimento do ambiente</span>
+                            <span id="mission-1-status" class="status-pending">○ Pendente</span>
+                        </div>
+                        <div class="mission-status-item">
+                            <span>2. Investigação da CVE-2026-109618</span>
+                            <span id="mission-2-status" class="status-pending">○ Pendente</span>
+                        </div>
+                        <div class="mission-status-item">
+                            <span>3. Investigação da CVE-2026-109619</span>
+                            <span id="mission-3-status" class="status-pending">○ Pendente</span>
+                        </div>
+                        <div class="mission-status-item">
+                            <span>4. Investigação da CVE-2026-115560</span>
+                            <span id="mission-4-status" class="status-pending">○ Pendente</span>
+                        </div>
+                        <div class="mission-status-item">
+                            <span>5. Aplicação das correções</span>
+                            <span id="mission-5-status" class="status-pending">○ Pendente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="start-training" class="btn-primary">🚀 Iniciar Treinamento</button>
+                    <button id="reset-progress" class="btn-secondary">🔄 Reiniciar Progresso</button>
+                </div>
+            </section>
+
+            <!-- Mission View -->
+            <section id="mission-view" style="display:none;">
+                <div id="mission-content"></div>
+            </section>
+
+            <!-- Report View -->
+            <section id="report-view" style="display:none;">
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/cves.js"></script>
+    <script src="js/scoring.js"></script>
+    <script src="js/missions.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/simulator.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
