@@ -21,7 +21,11 @@ class PHP2ShellLab {
     // Botão iniciar treinamento
     const startBtn = document.getElementById('start-training');
     if (startBtn) {
-      startBtn.addEventListener('click', () => {
+      startBtn.onclick = () => {
+        this.goToMission(1);
+      };
+      startBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         this.goToMission(1);
       });
     }
@@ -118,7 +122,12 @@ class PHP2ShellLab {
     const missionView = document.getElementById('mission-view');
     const reportView = document.getElementById('report-view');
     
+    if (dashboard) dashboard.style.display = 'none';
+    if (missionView) missionView.style.display = 'none';
+    if (reportView) reportView.style.display = 'none';
+    
     if (missionId === 0) {
+      if (dashboard) dashboard.style.display = 'block';
       this.renderDashboard();
       return;
     }
@@ -143,8 +152,6 @@ class PHP2ShellLab {
       return;
     }
     
-    if (dashboard) dashboard.style.display = 'none';
-    if (reportView) reportView.style.display = 'none';
     if (missionView) {
       missionView.style.display = 'block';
       this.renderMission(missionId);
