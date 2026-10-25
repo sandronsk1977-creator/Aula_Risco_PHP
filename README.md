@@ -43,7 +43,7 @@ A proposta é oferecer uma experiência prática e visual diretamente no navegad
 |---|---|
 | 🧭 Missões | Seguir etapas de aprendizagem com objetivos claros. |
 | 🔎 Investigação | Analisar evidências fictícias e identificar possíveis riscos. |
-| 💻 Terminal simulado | Aprender conceitos por meio de comandos e saídas demonstrativas, sem executar comandos reais no sistema. |
+| 💻 Terminal | Aprender conceitos por meio de comandos e saídas demonstrativas, sem executar comandos reais no sistema. |
 | 🛠️ Mitigação | Escolher medidas de correção dentro do cenário educacional. |
 | 📊 Progresso | Acompanhar as etapas concluídas, se esse recurso estiver disponível na versão atual. |
 | 🏆 Conclusão | Consultar um resumo de aprendizagem e certificado, se implementados. |
